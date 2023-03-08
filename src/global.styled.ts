@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: ${({ theme }) => theme.typography.antonio};
+  font-family: ${({ theme }) => theme.typography.spartan};
   color: ${({ theme }) => theme.colors.white};
 }`;
 

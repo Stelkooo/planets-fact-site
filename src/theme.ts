@@ -3,7 +3,7 @@ import { DefaultTheme } from 'styled-components';
 const defaultTheme: DefaultTheme = {
   colors: {
     white: '#ffffff',
-    black: '#000000',
+    black: '#070724',
     grey: '#38384f',
     greyishBlue: '#838391',
     teal: '#419ebb',
@@ -18,6 +18,16 @@ const defaultTheme: DefaultTheme = {
   typography: {
     antonio: "'Antonio', sans-serif",
     spartan: "'League Spartan', sans-serif",
+  },
+  planetColors: {
+    mercury: '#DEF4FC',
+    venus: '#F7CC7F',
+    earth: '#545BFE',
+    mars: '#FF6A45',
+    jupiter: '#ECAD7A',
+    saturn: '#FCCB6B',
+    uranus: '#65F0D5',
+    neptune: '#497EFA',
   },
 };
 
