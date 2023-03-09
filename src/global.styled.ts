@@ -9,6 +9,10 @@ const GlobalStyle = createGlobalStyle`
   margin: 0;
   font-family: ${({ theme }) => theme.typography.spartan};
   color: ${({ theme }) => theme.colors.white};
+}
+
+body {
+  background-color: ${({ theme }) => theme.colors.black};
 }`;
 
 export default GlobalStyle;

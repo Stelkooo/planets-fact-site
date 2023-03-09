@@ -8,6 +8,7 @@ import AppContainer from './App.styled';
 
 // component import
 import Header from './components/header/header.component';
+import Main from './components/main/main.component';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <GlobalStyle />
       <AppContainer>
         <Header />
+        <Main />
       </AppContainer>
     </ThemeProvider>
   );
