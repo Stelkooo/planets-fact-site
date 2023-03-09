@@ -7,9 +7,17 @@ import {
   InfoInput,
 } from './info-options.styled';
 
-function InfoOptions() {
+type Props = {
+  toggled?: boolean;
+} & typeof defaultProps;
+
+const defaultProps = {
+  toggled: false,
+};
+
+function InfoOptions({ toggled }: Props) {
   return (
-    <InfoOptionsContainer>
+    <InfoOptionsContainer $toggled={toggled}>
       <InfoLabel htmlFor="overview">
         <InfoInput
           type="radio"
@@ -36,5 +44,7 @@ function InfoOptions() {
     </InfoOptionsContainer>
   );
 }
+
+InfoOptions.defaultProps = defaultProps;
 
 export default InfoOptions;

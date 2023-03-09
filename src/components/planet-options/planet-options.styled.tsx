@@ -13,7 +13,7 @@ export const PlanetOptionsContainer = styled.div`
   position: absolute;
   top: ${93 / 16}rem;
   left: 0;
-
+  background-color: ${({ theme }) => theme.colors.black};
   /* @media screen and (min-width: 768px) {
     display: block !important;
   } */

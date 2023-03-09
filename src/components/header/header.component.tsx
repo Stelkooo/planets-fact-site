@@ -32,7 +32,7 @@ function Header() {
           <PlanetOptions />
         </PlanetMenu>
       </TitleAndNavigation>
-      {toggleHamburger || <InfoOptions />}
+      <InfoOptions toggled={toggleHamburger} />
     </HeaderContainer>
   );
 }

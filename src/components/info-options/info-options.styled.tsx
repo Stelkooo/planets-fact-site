@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
-export const InfoOptionsContainer = styled.div`
+interface IProps {
+  $toggled: boolean;
+}
+
+export const InfoOptionsContainer = styled.div<IProps>`
+  visibility: ${(props) => (props.$toggled ? 'hidden' : 'visible')};
   padding: ${20 / 16}rem ${24 / 16}rem;
   display: flex;
   align-items: center;
