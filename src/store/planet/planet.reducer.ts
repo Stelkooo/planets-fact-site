@@ -30,15 +30,26 @@ type Planet = {
   sizes: Size;
 };
 
+type CurrentPlanet =
+  | 'Mercury'
+  | 'Venus'
+  | 'Earth'
+  | 'Mars'
+  | 'Jupiter'
+  | 'Saturn'
+  | 'Neptune';
+
+type CurrentInfo = 'planet' | 'structure' | 'surface';
+
 type InitialState = {
   planets: Planet[];
-  currentPlanet: string;
-  currentInfo: string;
+  currentPlanet: CurrentPlanet;
+  currentInfo: CurrentInfo;
 };
 
 const PLANET_INITIAL_STATE: InitialState = {
   planets: [],
-  currentPlanet: 'Mars',
+  currentPlanet: 'Mercury',
   currentInfo: 'planet',
 };
 
@@ -49,9 +60,16 @@ export const planetSlice = createSlice({
     setPlanets: (state, action: PayloadAction<Planet[]>) => {
       state.planets = action.payload;
     },
+    setCurrentPlanet: (state, action: PayloadAction<CurrentPlanet>) => {
+      state.currentPlanet = action.payload;
+    },
+    setCurrentInfo: (state, action: PayloadAction<CurrentInfo>) => {
+      state.currentInfo = action.payload;
+    },
   },
 });
 
-export const { setPlanets } = planetSlice.actions;
+export const { setPlanets, setCurrentPlanet, setCurrentInfo } =
+  planetSlice.actions;
 
 export const planetReducer = planetSlice.reducer;
