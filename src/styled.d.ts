@@ -24,15 +24,5 @@ declare module 'styled-components' {
       antonio: string;
       spartan: string;
     };
-    planetColors: {
-      mercury: string;
-      venus: string;
-      earth: string;
-      mars: string;
-      jupiter: string;
-      saturn: string;
-      uranus: string;
-      neptune: string;
-    };
   }
 }

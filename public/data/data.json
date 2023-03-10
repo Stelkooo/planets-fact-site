@@ -26,7 +26,8 @@
       "mobile": 111,
       "tablet": 184,
       "desktop": 290
-    }
+    },
+    "color": "#DEF4FC"
   },
   {
     "name": "Venus",
@@ -55,7 +56,8 @@
       "mobile": 154,
       "tablet": 253,
       "desktop": 400
-    }
+    },
+    "color": "#F7CC7F"
   },
   {
     "name": "Earth",
@@ -84,7 +86,8 @@
       "mobile": 173,
       "tablet": 285,
       "desktop": 450
-    }
+    },
+    "color": "#545BFE"
   },
   {
     "name": "Mars",
@@ -113,7 +116,8 @@
       "mobile": 129,
       "tablet": 213,
       "desktop": 336
-    }
+    },
+    "color": "#FF6A45"
   },
   {
     "name": "Jupiter",
@@ -142,7 +146,8 @@
       "mobile": 224,
       "tablet": 369,
       "desktop": 582
-    }
+    },
+    "color": "#ECAD7A"
   },
   {
     "name": "Saturn",
@@ -171,7 +176,8 @@
       "mobile": 256,
       "tablet": 422,
       "desktop": 666
-    }
+    },
+    "color": "#FCCB6B"
   },
   {
     "name": "Uranus",
@@ -200,7 +206,8 @@
       "mobile": 176,
       "tablet": 290,
       "desktop": 458
-    }
+    },
+    "color": "#65F0D5"
   },
   {
     "name": "Neptune",
@@ -229,6 +236,7 @@
       "mobile": 173,
       "tablet": 285,
       "desktop": 450
-    }
+    },
+    "color": "#497EFA"
   }
 ]

@@ -1,5 +1,14 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
+export type PlanetList =
+  | 'Mercury'
+  | 'Venus'
+  | 'Earth'
+  | 'Mars'
+  | 'Jupiter'
+  | 'Saturn'
+  | 'Neptune';
+
 type Info = {
   content: string;
   source: string;
@@ -18,7 +27,7 @@ type Size = {
 };
 
 type Planet = {
-  name: string;
+  name: PlanetList;
   overview: Info[];
   structure: Info[];
   geology: Info[];
@@ -28,22 +37,14 @@ type Planet = {
   temperature: string;
   images: Image;
   sizes: Size;
+  color: string;
 };
-
-type CurrentPlanet =
-  | 'Mercury'
-  | 'Venus'
-  | 'Earth'
-  | 'Mars'
-  | 'Jupiter'
-  | 'Saturn'
-  | 'Neptune';
 
 type CurrentInfo = 'planet' | 'structure' | 'surface';
 
 type InitialState = {
   planets: Planet[];
-  currentPlanet: CurrentPlanet;
+  currentPlanet: PlanetList;
   currentInfo: CurrentInfo;
 };
 
@@ -60,7 +61,7 @@ export const planetSlice = createSlice({
     setPlanets: (state, action: PayloadAction<Planet[]>) => {
       state.planets = action.payload;
     },
-    setCurrentPlanet: (state, action: PayloadAction<CurrentPlanet>) => {
+    setCurrentPlanet: (state, action: PayloadAction<PlanetList>) => {
       state.currentPlanet = action.payload;
     },
     setCurrentInfo: (state, action: PayloadAction<CurrentInfo>) => {

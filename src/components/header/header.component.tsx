@@ -14,7 +14,7 @@ import {
 } from './header.styled';
 
 function Header() {
-  const [toggleHamburger, setToggleHamburger] = useState(false);
+  const [toggleHamburger, setToggleHamburger] = useState<boolean>(false);
 
   function handleHamburgerToggle(): void {
     setToggleHamburger(!toggleHamburger);
@@ -29,7 +29,10 @@ function Header() {
             onClick={() => handleHamburgerToggle()}
             $toggled={toggleHamburger}
           />
-          <PlanetOptions />
+          <PlanetOptions
+            toggleHamburger={toggleHamburger}
+            setToggleHamburger={setToggleHamburger}
+          />
         </PlanetMenu>
       </TitleAndNavigation>
       <InfoOptions toggled={toggleHamburger} />
