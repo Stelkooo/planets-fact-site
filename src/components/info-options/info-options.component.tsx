@@ -1,5 +1,9 @@
 import React from 'react';
 
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { setCurrentInfo } from '../../store/planet/planet.reducer';
+import { selectCurrentPlanet } from '../../store/planet/planet.selector';
+
 // style import
 import {
   InfoOptionsContainer,
@@ -16,6 +20,9 @@ const defaultProps = {
 };
 
 function InfoOptions({ toggled }: Props) {
+  const dispatch = useAppDispatch();
+  const currentPlanet = useAppSelector(selectCurrentPlanet);
+
   return (
     <InfoOptionsContainer $toggled={toggled}>
       <InfoLabel htmlFor="overview">
@@ -25,6 +32,7 @@ function InfoOptions({ toggled }: Props) {
           name="options"
           value="overview"
           defaultChecked
+          $planetColour={currentPlanet.color}
         />
         <span>Overview</span>
       </InfoLabel>
@@ -34,11 +42,18 @@ function InfoOptions({ toggled }: Props) {
           id="structure"
           name="options"
           value="structure"
+          $planetColour={currentPlanet.color}
         />
         <span>Structure</span>
       </InfoLabel>
       <InfoLabel htmlFor="surface">
-        <InfoInput type="radio" id="surface" name="options" value="surface" />
+        <InfoInput
+          type="radio"
+          id="surface"
+          name="options"
+          value="surface"
+          $planetColour={currentPlanet.color}
+        />
         <span>Surface </span>
       </InfoLabel>
     </InfoOptionsContainer>
