@@ -9,7 +9,7 @@ export type PlanetList =
   | 'Saturn'
   | 'Neptune';
 
-type Info = {
+export type Info = {
   content: string;
   source: string;
 };
@@ -40,7 +40,7 @@ type Planet = {
   color: string;
 };
 
-type CurrentInfo = 'planet' | 'structure' | 'surface';
+export type CurrentInfo = 'overview' | 'structure' | 'geology';
 
 type InitialState = {
   planets: Planet[];
@@ -51,7 +51,7 @@ type InitialState = {
 const PLANET_INITIAL_STATE: InitialState = {
   planets: [],
   currentPlanet: 'Mercury',
-  currentInfo: 'planet',
+  currentInfo: 'overview',
 };
 
 export const planetSlice = createSlice({

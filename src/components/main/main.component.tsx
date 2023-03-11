@@ -1,6 +1,9 @@
 import React from 'react';
 import { useAppSelector } from '../../store/hooks';
-import { selectCurrentPlanet } from '../../store/planet/planet.selector';
+import {
+  selectCurrentPlanet,
+  selectCurrentInfo,
+} from '../../store/planet/planet.selector';
 
 // svg import
 import { ReactComponent as SourceIcon } from '../../assets/icon-source.svg';
@@ -22,6 +25,7 @@ import {
 
 function Main() {
   const currentPlanet = useAppSelector(selectCurrentPlanet);
+  const currentInfo = useAppSelector(selectCurrentInfo);
 
   return (
     currentPlanet && (
@@ -36,15 +40,10 @@ function Main() {
           />
         </PlanetImgContainer>
         <PlanetName>{currentPlanet.name}</PlanetName>
-        <PlanetDesc>
-          Mercury is the smallest planet in the Solar System and the closest to
-          the Sun. Its orbit around the Sun takes 87.97 Earth days, the shortest
-          of all the Sun`&apos;`s planets. Mercury is one of four terrestrial
-          planets in the Solar System, and is a rocky body like Earth.
-        </PlanetDesc>
+        <PlanetDesc>{currentInfo.content}</PlanetDesc>
         <Source>
           Source :{' '}
-          <SourceLink href="top">
+          <SourceLink href={currentInfo.source} target="_blank">
             Wikipedia
             <SourceIcon />
           </SourceLink>

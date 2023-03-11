@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import { setCurrentInfo } from '../../store/planet/planet.reducer';
+import { setCurrentInfo, CurrentInfo } from '../../store/planet/planet.reducer';
 import { selectCurrentPlanet } from '../../store/planet/planet.selector';
 
 // style import
@@ -23,6 +23,11 @@ function InfoOptions({ toggled }: Props) {
   const dispatch = useAppDispatch();
   const currentPlanet = useAppSelector(selectCurrentPlanet);
 
+  function handleRadioChange(event: React.ChangeEvent<HTMLInputElement>): void {
+    const eventValue = event.currentTarget.value as CurrentInfo;
+    dispatch(setCurrentInfo(eventValue));
+  }
+
   return (
     <InfoOptionsContainer $toggled={toggled}>
       <InfoLabel htmlFor="overview">
@@ -33,6 +38,7 @@ function InfoOptions({ toggled }: Props) {
           value="overview"
           defaultChecked
           $planetColour={currentPlanet.color}
+          onChange={(event) => handleRadioChange(event)}
         />
         <span>Overview</span>
       </InfoLabel>
@@ -43,6 +49,7 @@ function InfoOptions({ toggled }: Props) {
           name="options"
           value="structure"
           $planetColour={currentPlanet.color}
+          onChange={(event) => handleRadioChange(event)}
         />
         <span>Structure</span>
       </InfoLabel>
@@ -51,8 +58,9 @@ function InfoOptions({ toggled }: Props) {
           type="radio"
           id="surface"
           name="options"
-          value="surface"
+          value="geology"
           $planetColour={currentPlanet.color}
+          onChange={(event) => handleRadioChange(event)}
         />
         <span>Surface </span>
       </InfoLabel>
