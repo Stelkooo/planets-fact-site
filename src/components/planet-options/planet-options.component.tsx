@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/dot-notation */
-import React, { useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import {
   setCurrentPlanet,
@@ -29,14 +29,22 @@ function PlanetOptions({ toggleHamburger, setToggleHamburger }: Props) {
   const planets = useAppSelector(selectPlanets);
   const currentPlanet = useAppSelector(selectCurrentPlanet);
 
-  const windowWidth = useRef(window.innerWidth);
+  const [dimensions, setDimensions] = useState({ width: window.innerWidth });
 
   function handleOnClick(planetName: PlanetList): void {
     if (planetName !== currentPlanet.name) {
       dispatch(setCurrentPlanet(planetName));
-      if (windowWidth.current < 768) setToggleHamburger(!toggleHamburger);
+      if (dimensions.width < 768) setToggleHamburger(!toggleHamburger);
     }
   }
+
+  useEffect(() => {
+    function handleResize() {
+      setDimensions({ width: window.innerWidth });
+    }
+
+    window.addEventListener('resize', handleResize);
+  }, []);
 
   return (
     <PlanetOptionsContainer>
