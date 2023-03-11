@@ -19,7 +19,7 @@ export const selectCurrentPlanet = createSelector(
     ]
 );
 
-export const selectCurrentInfo = createSelector(
+export const selectCurrentDesc = createSelector(
   [selectPlanetReducer, selectCurrentPlanet],
   (reducer, planet) => {
     let planetInfo = {};
@@ -38,4 +38,9 @@ export const selectCurrentInfo = createSelector(
     }
     return planetInfo as Info;
   }
+);
+
+export const selectCurrentInfo = createSelector(
+  [selectPlanetReducer],
+  (planet) => planet.currentInfo
 );

@@ -2,8 +2,11 @@ import React from 'react';
 import { useAppSelector } from '../../store/hooks';
 import {
   selectCurrentPlanet,
-  selectCurrentInfo,
+  selectCurrentDesc,
 } from '../../store/planet/planet.selector';
+
+// component import
+import PlanetImage from '../planet-img/planet-img.component';
 
 // svg import
 import { ReactComponent as SourceIcon } from '../../assets/icon-source.svg';
@@ -11,8 +14,6 @@ import { ReactComponent as SourceIcon } from '../../assets/icon-source.svg';
 // style import
 import {
   MainContainer,
-  PlanetImgContainer,
-  PlanetImg,
   PlanetName,
   PlanetDesc,
   Source,
@@ -25,25 +26,17 @@ import {
 
 function Main() {
   const currentPlanet = useAppSelector(selectCurrentPlanet);
-  const currentInfo = useAppSelector(selectCurrentInfo);
+  const currentDesc = useAppSelector(selectCurrentDesc);
 
   return (
     currentPlanet && (
       <MainContainer>
-        <PlanetImgContainer>
-          <PlanetImg
-            src={`/assets/planet-${currentPlanet.name.toLowerCase()}.svg`}
-            alt=""
-            $mobileHeight={currentPlanet.sizes.mobile}
-            $tabletHeight={currentPlanet.sizes.tablet}
-            $desktopHeight={currentPlanet.sizes.desktop}
-          />
-        </PlanetImgContainer>
+        <PlanetImage />
         <PlanetName>{currentPlanet.name}</PlanetName>
-        <PlanetDesc>{currentInfo.content}</PlanetDesc>
+        <PlanetDesc>{currentDesc.content}</PlanetDesc>
         <Source>
           Source :{' '}
-          <SourceLink href={currentInfo.source} target="_blank">
+          <SourceLink href={currentDesc.source} target="_blank">
             Wikipedia
             <SourceIcon />
           </SourceLink>

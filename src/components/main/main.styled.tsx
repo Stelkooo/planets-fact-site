@@ -1,27 +1,10 @@
 import styled from 'styled-components';
 
-interface IProps {
-  $mobileHeight: number;
-  $tabletHeight: number;
-  $desktopHeight: number;
-}
-
 export const MainContainer = styled.div`
   padding: 0 ${24 / 16}rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-
-export const PlanetImgContainer = styled.div`
-  height: ${304 / 16}rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-export const PlanetImg = styled.img<IProps>`
-  height: ${(props) => `${props.$mobileHeight / 16}rem`};
 `;
 
 export const PlanetName = styled.h1`
