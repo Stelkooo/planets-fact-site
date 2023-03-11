@@ -21,6 +21,10 @@ export const InfoOptionsContainer = styled.div<IProps>`
     gap: 1rem;
     border-bottom: 0;
   }
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    padding: 0;
+  }
 `;
 
 export const InfoLabel = styled.label<IPropsColor & IProps>`
@@ -30,6 +34,7 @@ export const InfoLabel = styled.label<IPropsColor & IProps>`
   line-height: ${10 / 16}rem;
   letter-spacing: ${1.9 / 16}rem;
   text-transform: uppercase;
+  cursor: pointer;
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     width: ${281 / 16}rem;
@@ -42,6 +47,16 @@ export const InfoLabel = styled.label<IPropsColor & IProps>`
     &:has(input:checked) {
       background-color: ${(props) => props.$planetColour};
     }
+
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.grey};
+    }
+  }
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    width: ${350 / 16}rem;
+    height: ${48 / 16}rem;
+    font-size: ${12 / 16}rem;
   }
 `;
 

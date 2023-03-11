@@ -20,6 +20,7 @@ export const PlanetImgContainer = styled.div`
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
     height: ${754 / 16}rem;
+    width: 100%;
   }
 `;
 
@@ -46,5 +47,6 @@ export const Geology = styled.img`
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
     height: ${199 / 16}rem;
+    bottom: ${95 / 16}rem;
   }
 `;

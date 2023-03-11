@@ -16,6 +16,7 @@ import { ReactComponent as SourceIcon } from '../../assets/icon-source.svg';
 // style import
 import {
   MainContainer,
+  DesktopScreenContainer,
   TabletScreenContainer,
   PlanetName,
   PlanetDesc,
@@ -36,21 +37,23 @@ function Main() {
   return (
     currentPlanet && (
       <MainContainer>
-        <PlanetImage />
-        <TabletScreenContainer>
-          <div>
-            <PlanetName>{currentPlanet.name}</PlanetName>
-            <PlanetDesc>{currentDesc.content}</PlanetDesc>
-            <Source>
-              Source :{' '}
-              <SourceLink href={currentDesc.source} target="_blank">
-                Wikipedia
-                <SourceIcon />
-              </SourceLink>
-            </Source>
-          </div>
-          <div>{isTablet && <InfoOptions />}</div>
-        </TabletScreenContainer>
+        <DesktopScreenContainer>
+          <PlanetImage />
+          <TabletScreenContainer>
+            <div>
+              <PlanetName>{currentPlanet.name}</PlanetName>
+              <PlanetDesc>{currentDesc.content}</PlanetDesc>
+              <Source>
+                Source :{' '}
+                <SourceLink href={currentDesc.source} target="_blank">
+                  Wikipedia
+                  <SourceIcon />
+                </SourceLink>
+              </Source>
+            </div>
+            <div>{isTablet && <InfoOptions />}</div>
+          </TabletScreenContainer>
+        </DesktopScreenContainer>
         <FactsContainer>
           <Fact>
             <FactName>Rotation Time</FactName>
