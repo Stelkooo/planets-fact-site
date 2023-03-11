@@ -51,7 +51,12 @@ function PlanetOptions({ toggleHamburger, setToggleHamburger }: Props) {
       {planets.map((planet) => (
         <Planet key={planet.name} onClick={() => handleOnClick(planet.name)}>
           <PlanetColor $planet={planet.color} />
-          <PlanetName>{planet.name}</PlanetName>
+          <PlanetName
+            $currentlySelected={currentPlanet.name === planet.name}
+            $planet={planet.color}
+          >
+            {planet.name}
+          </PlanetName>
           <Chevron />
         </Planet>
       ))}

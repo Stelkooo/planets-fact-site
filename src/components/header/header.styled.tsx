@@ -27,6 +27,12 @@ export const TitleAndNavigation = styled.div`
     justify-content: center;
     gap: ${39 / 16}rem;
   }
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    padding: ${22 / 16}rem 2rem ${27 / 16}rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `;
 
 export const SiteName = styled.h3`
@@ -39,6 +45,10 @@ export const SiteName = styled.h3`
 export const PlanetMenu = styled.div`
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     width: 100%;
+  }
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    width: auto;
   }
 `;
 
