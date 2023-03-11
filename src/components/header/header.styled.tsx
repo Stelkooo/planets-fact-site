@@ -6,7 +6,13 @@ interface IProps {
   $toggled: boolean;
 }
 
-export const HeaderContainer = styled.header``;
+export const HeaderContainer = styled.header`
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    &:last-child {
+      display: none;
+    }
+  }
+`;
 
 export const TitleAndNavigation = styled.div`
   padding: 1rem ${24 / 16}rem;
@@ -14,6 +20,13 @@ export const TitleAndNavigation = styled.div`
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid ${({ theme }) => theme.colors.white}20;
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    padding: 2rem ${52 / 16}rem ${27 / 16}rem;
+    flex-direction: column;
+    justify-content: center;
+    gap: ${39 / 16}rem;
+  }
 `;
 
 export const SiteName = styled.h3`
@@ -23,7 +36,11 @@ export const SiteName = styled.h3`
   letter-spacing: -${1.05 / 16}rem;
 `;
 
-export const PlanetMenu = styled.div``;
+export const PlanetMenu = styled.div`
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    width: 100%;
+  }
+`;
 
 export const HamburgerIcon = styled(Hamburger)<IProps>`
   & g {
@@ -35,5 +52,9 @@ export const HamburgerIcon = styled(Hamburger)<IProps>`
 
   & + div {
     display: ${(props) => (props.$toggled ? 'block' : 'none')};
+  }
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    display: none;
   }
 `;

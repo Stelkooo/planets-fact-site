@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 // component import
 import PlanetOptions from '../planet-options/planet-options.component';
@@ -15,6 +16,8 @@ import {
 
 function Header() {
   const [toggleHamburger, setToggleHamburger] = useState<boolean>(false);
+
+  const isTablet = useMediaQuery({ query: '(min-width: 768px)' });
 
   function handleHamburgerToggle(): void {
     setToggleHamburger(!toggleHamburger);
@@ -35,7 +38,7 @@ function Header() {
           />
         </PlanetMenu>
       </TitleAndNavigation>
-      <InfoOptions toggled={toggleHamburger} />
+      {isTablet || <InfoOptions toggled={toggleHamburger} />}
     </HeaderContainer>
   );
 }

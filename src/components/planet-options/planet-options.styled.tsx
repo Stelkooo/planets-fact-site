@@ -14,9 +14,13 @@ export const PlanetOptionsContainer = styled.div`
   top: ${93 / 16}rem;
   left: 0;
   background-color: ${({ theme }) => theme.colors.black};
-  /* @media screen and (min-width: 768px) {
-    display: block !important;
-  } */
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    padding: 0;
+    position: static;
+    display: flex !important;
+    justify-content: space-between;
+  }
 `;
 
 export const Planet = styled.div`
@@ -28,6 +32,13 @@ export const Planet = styled.div`
   :not(&:last-of-type) {
     border-bottom: 1px solid ${({ theme }) => `${theme.colors.white}10`};
   }
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    padding: 0;
+    :not(&:last-of-type) {
+      border-bottom: none;
+    }
+  }
 `;
 
 export const PlanetColor = styled.div<IProps>`
@@ -35,6 +46,10 @@ export const PlanetColor = styled.div<IProps>`
   height: ${20 / 16}rem;
   border-radius: 50%;
   background-color: ${(props) => props.$planet};
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    display: none !important;
+  }
 `;
 
 export const PlanetName = styled.h4`
@@ -42,8 +57,16 @@ export const PlanetName = styled.h4`
   line-height: ${25 / 16}rem;
   letter-spacing: ${2.6 / 16}rem;
   text-transform: uppercase;
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    font-size: ${11 / 16}rem;
+  }
 `;
 
 export const Chevron = styled(ChevronIcon)`
   margin-left: auto;
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    display: none !important;
+  }
 `;
