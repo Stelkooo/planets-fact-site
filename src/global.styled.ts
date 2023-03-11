@@ -13,6 +13,9 @@ const GlobalStyle = createGlobalStyle`
 
 body {
   background-color: ${({ theme }) => theme.colors.black};
+  background-image: url('assets/background-stars.svg');
+
+  counter-reset: info;
 }`;
 
 export default GlobalStyle;

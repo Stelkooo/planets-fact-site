@@ -5,6 +5,21 @@ export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    padding: 0 ${40 / 16}rem;
+    text-align: left;
+  }
+`;
+
+export const TabletScreenContainer = styled.div`
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: ${69 / 16}rem;
+  }
 `;
 
 export const PlanetName = styled.h1`
@@ -12,13 +27,17 @@ export const PlanetName = styled.h1`
   font-family: ${({ theme }) => theme.typography.antonio};
   font-size: ${40 / 16}rem;
   text-transform: uppercase;
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    margin-bottom: ${24 / 16}rem;
+    font-size: ${48 / 16}rem;
+  }
 `;
 
 export const PlanetDesc = styled.p`
   margin-bottom: ${32 / 16}rem;
   font-size: ${11 / 16}rem;
   line-height: ${22 / 16}rem;
-  text-align: center;
 `;
 
 export const Source = styled.p`
@@ -59,6 +78,11 @@ export const FactsContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${8 / 16}rem;
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    flex-direction: row;
+    gap: ${11 / 16}rem;
+  }
 `;
 
 export const Fact = styled.div`
@@ -67,6 +91,14 @@ export const Fact = styled.div`
   align-items: center;
   justify-content: space-between;
   border: 1px solid ${({ theme }) => theme.colors.white}20;
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    width: 100%;
+    padding: 1rem 1rem ${19 / 16}rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: ${11 / 16}rem;
+  }
 `;
 
 export const FactName = styled.p`
@@ -85,4 +117,8 @@ export const FactValue = styled.p`
   line-height: ${26 / 16}rem;
   letter-spacing: -${0.75 / 16}rem;
   text-transform: uppercase;
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    font-size: ${24 / 16}rem;
+  }
 `;

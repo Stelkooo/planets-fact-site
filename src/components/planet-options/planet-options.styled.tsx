@@ -20,6 +20,7 @@ export const PlanetOptionsContainer = styled.div`
     position: static;
     display: flex !important;
     justify-content: space-between;
+    background-color: ${({ theme }) => theme.colors.black}00;
   }
 `;
 

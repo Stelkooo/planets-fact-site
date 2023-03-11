@@ -13,6 +13,14 @@ export const PlanetImgContainer = styled.div`
   align-items: center;
   justify-content: center;
   z-index: -1;
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    height: ${460 / 16}rem;
+  }
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    height: ${754 / 16}rem;
+  }
 `;
 
 export const Img = styled.img<IProps>`

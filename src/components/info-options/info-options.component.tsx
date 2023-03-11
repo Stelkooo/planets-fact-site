@@ -30,7 +30,11 @@ function InfoOptions({ toggled }: Props) {
 
   return (
     <InfoOptionsContainer $toggled={toggled}>
-      <InfoLabel htmlFor="overview">
+      <InfoLabel
+        htmlFor="overview"
+        $planetColour={currentPlanet.color}
+        $toggled={toggled}
+      >
         <InfoInput
           type="radio"
           id="overview"
@@ -42,7 +46,11 @@ function InfoOptions({ toggled }: Props) {
         />
         <span>Overview</span>
       </InfoLabel>
-      <InfoLabel htmlFor="structure">
+      <InfoLabel
+        htmlFor="structure"
+        $planetColour={currentPlanet.color}
+        $toggled={toggled}
+      >
         <InfoInput
           type="radio"
           id="structure"
@@ -53,7 +61,11 @@ function InfoOptions({ toggled }: Props) {
         />
         <span>Structure</span>
       </InfoLabel>
-      <InfoLabel htmlFor="surface">
+      <InfoLabel
+        htmlFor="surface"
+        $planetColour={currentPlanet.color}
+        $toggled={toggled}
+      >
         <InfoInput
           type="radio"
           id="surface"
